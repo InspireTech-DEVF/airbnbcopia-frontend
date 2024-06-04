@@ -1,7 +1,7 @@
 import { useForm } from "react-hook-form";
 import { useNavigate, Link } from "react-router-dom";
 import { useAuthContext } from "@/hooks/useAuthContext";
-import { registerUserService } from "@/services/useServices";
+import { loginUserService, registerUserService } from "@/services/useServices";
 import "./newuserform.css";
 
 const NewUserForm = () => {
@@ -15,9 +15,19 @@ const NewUserForm = () => {
 
   const onSubmit = async (data) => {
     try {
-      const response = await registerUserService(data);
+      const regResponse = await registerUserService(data);
+      if (!regResponse.data) {
+        throw new Error(`Error ${regResponse}: ${regResponse.status}`);
+      }
+
+      const loginData = {
+        email: data.email,
+        password: data.password
+      };
+
+      const response = await loginUserService(loginData);
       if (!response.data) {
-        throw new Error(`Error ${response}: ${response.status}`);
+        throw new Error(`Error ${response.status}: ${response.status}`);
       }
 
       const result = response.data;
