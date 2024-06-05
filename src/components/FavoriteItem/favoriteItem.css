@@ -1,0 +1,71 @@
+.housing__profile {
+  --gap: 4rem;
+  border-bottom: 1px solid hsl(var(--clr-primary));
+  justify-content: space-between;
+}
+
+.housing__img {
+  height: 280px;
+  overflow: hidden;
+}
+
+.housing__img-content {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.housing__info {
+  --gap: 0.4rem;
+  flex-direction: column;
+  margin-block: 2rem;
+  flex: auto;
+}
+
+.housing__location {
+  align-self: flex-start;
+}
+
+.housing__cta {
+  --gap: 2rem;
+  margin-top: auto;
+  justify-content: end;
+  align-items: center;
+}
+
+.housing__btn {
+  cursor: pointer;
+  outline: none;
+  border: none;
+  border-radius: 50%;
+}
+.housing__btn:first-child {
+  padding: 1.2rem;
+}
+.housing__btn:last-child {
+  border-radius: var(--border-radius-2);
+  padding: 1rem 2rem;
+}
+
+.housing__features {
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 2rem 4rem;
+}
+.housing__perks {
+  --gap: 2.6rem;
+  grid-template-columns: 1fr 1fr;
+}
+
+.housing_perk {
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.housing_perk i {
+  font-size: 2rem;
+}
+
+.housing__pricing {
+  align-self: flex-end;
+}
